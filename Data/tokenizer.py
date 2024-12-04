@@ -48,9 +48,7 @@ class CustomTokenizer(PreTrainedTokenizer):
         self.unk_token_id_direct = self.token_to_id.get(self.unk_token, None)
 
     def tokenize_file(self, project_dir, file_path):
-        """
-        파일 경로를 입력으로 받아 토큰화된 문자열 시퀀스를 반환합니다.
-        """
+        
         tokens = tokenize_class_file_with_gradle(project_dir, file_path, self.option)
         return tokens
 
